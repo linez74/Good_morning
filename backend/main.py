@@ -30,11 +30,19 @@ serializer = URLSafeTimedSerializer(SESSION_SECRET, salt="morning-session")
 fernet = Fernet(FERNET_KEY.encode())
 app = FastAPI(title="Little Mornings API")
 
-origins = [FRONTEND_URL.rstrip("/")]
+origins = ["https://linez74.github.io"]
+
 extra = os.getenv("EXTRA_ALLOWED_ORIGIN", "")
-if extra: origins.append(extra.rstrip("/"))
-app.add_middleware(CORSMiddleware, allow_origins=origins, allow_credentials=False,
-                   allow_methods=["GET","POST","OPTIONS"], allow_headers=["Authorization","Content-Type"])
+if extra:
+    origins.append(extra.rstrip("/"))
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=False,
+    allow_methods=["GET", "POST", "OPTIONS"],
+    allow_headers=["Authorization", "Content-Type"],
+)
 
 def db():
     os.makedirs(os.path.dirname(DATABASE_PATH) or ".", exist_ok=True)
