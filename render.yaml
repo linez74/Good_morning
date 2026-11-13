@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: little-mornings-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /
+    disk:
+      name: morning-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: APP_PASSWORD
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: FERNET_KEY
+        sync: false
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: GOOGLE_REDIRECT_URI
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
+      - key: APP_TIMEZONE
+        value: Asia/Beirut
