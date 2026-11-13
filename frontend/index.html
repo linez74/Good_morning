@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#4b1728" />
+  <title>A little morning love</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <main class="shell">
+    <section id="lock-screen" class="lock-screen">
+      <div class="lock-card">
+        <div class="tiny-heart">♥</div>
+        <p class="eyebrow">A LITTLE SOMETHING FOR YOU</p>
+        <h1>Good things<br><em>start here.</em></h1>
+        <p class="muted intro">A tiny corner of the internet, made just for you.</p>
+        <form id="login-form">
+          <label for="password">Your little secret</label>
+          <div class="password-row">
+            <input id="password" type="password" placeholder="Enter the password" autocomplete="current-password" required />
+            <button class="primary-btn" type="submit">Open ♥</button>
+          </div>
+          <p id="login-error" class="error" aria-live="polite"></p>
+        </form>
+        <p class="lock-foot">made with love, always</p>
+      </div>
+    </section>
+
+    <section id="dashboard" class="dashboard hidden">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Home"><span>♥</span> little mornings</a>
+        <div class="top-actions">
+          <span id="connection-status" class="status"><i></i> Demo mode</span>
+          <button id="logout-btn" class="text-btn">Lock</button>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow" id="today-label">A NEW DAY, A NEW LITTLE CHAPTER</p>
+          <h1>Good morning,<br><em>my love.</em></h1>
+          <p class="hero-sub">I hope you woke up feeling loved. Here's a little look at how you rested.</p>
+          <div class="hero-note"><span>♡</span> No matter what the numbers say, I'm rooting for you.</div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="sun-disc"></div><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+          <span class="float-heart heart-a">♥</span><span class="float-heart heart-b">♡</span>
+          <span class="art-caption">one day<br>at a time</span>
+        </div>
+      </section>
+
+      <div class="section-heading">
+        <div><p class="eyebrow">YOUR MORNING CHECK-IN</p><h2>A little about last night</h2></div>
+        <span class="date-pill" id="date-pill"></span>
+      </div>
+
+      <section class="metrics-grid">
+        <article class="metric-card sleep-card">
+          <div class="metric-top"><span class="metric-icon">☾</span><span class="metric-label">SLEEP</span><span class="metric-tag">Last night</span></div>
+          <div class="metric-value" id="sleep-value">7h 42m</div>
+          <p class="metric-caption" id="sleep-caption">A little time to recharge.</p>
+          <div class="sleep-bar"><span id="sleep-bar-fill" style="width:82%"></span></div>
+          <div class="metric-bottom"><span>Sleep duration</span><span id="sleep-total">7h 42m</span></div>
+        </article>
+        <article class="metric-card heart-card">
+          <div class="metric-top"><span class="metric-icon">♡</span><span class="metric-label">RESTING HEART RATE</span></div>
+          <div class="metric-value"><span id="heart-value">62</span><small> bpm</small></div>
+          <p class="metric-caption" id="heart-caption">A quiet little rhythm.</p>
+          <div class="pulse-line"><svg viewBox="0 0 260 42" preserveAspectRatio="none"><path d="M0 22 H48 L60 22 L70 8 L82 35 L94 16 L104 22 H145 L157 22 L168 10 L180 32 L191 20 H260"/></svg></div>
+        </article>
+        <article class="metric-card activity-card">
+          <div class="metric-top"><span class="metric-icon">✧</span><span class="metric-label">YESTERDAY'S STEPS</span></div>
+          <div class="metric-value" id="steps-value">8,420</div>
+          <p class="metric-caption">Every little step counts.</p>
+          <div class="steps-dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        </article>
+      </section>
+
+      <section class="lower-grid">
+        <article class="love-card">
+          <div class="love-card-top"><span class="eyebrow">A NOTE FOR YOU</span><span class="scribble-heart">♡</span></div>
+          <p class="note-date" id="note-date">TODAY'S LITTLE REMINDER</p>
+          <h2 id="love-note">You make ordinary days feel like something worth remembering.</h2>
+          <p class="note-signoff">Always in your corner. <span>♥</span></p>
+        </article>
+        <article class="details-card">
+          <p class="eyebrow">A GENTLE REMINDER</p>
+          <h3>Take today at your own pace.</h3>
+          <p>Drink some water, stretch a little, and remember that you don't have to do everything at once.</p>
+          <div class="details-divider"></div>
+          <div class="sync-row"><span>Last updated</span><strong id="last-sync">Sample data · preview</strong></div>
+          <button id="refresh-btn" class="outline-btn">Refresh health data ↗</button>
+          <button id="connect-btn" class="google-btn">Connect Google Health</button>
+          <p class="privacy-note">Your health data is private. Only the account you authorize can be read by this page.</p>
+        </article>
+      </section>
+      <footer class="footer"><span>made with <b>♥</b> for you</span><span>three months down, a lifetime of mornings to go.</span></footer>
+    </section>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>
