@@ -1,5 +1,5 @@
 // Configure this after deploying the FastAPI backend.
-const API_BASE = "https://good-morning-1xie.onrender.com/";
+const API_BASE = "https://good-morning-1xie.onrender.com";
 const DEMO = {
   sleepMinutes: 462, restingHeartRate: 62, steps: 8420,
   loveNote: "You make ordinary days feel like something worth remembering."
